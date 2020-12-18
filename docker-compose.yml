@@ -1,0 +1,15 @@
+version: '2.4'
+
+services:
+  nbody:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix/:/tmp/.X11-unix
+    network_mode: "host"
+    command: "sh -c 'make_nbody.sh; /tmp/samples/5_Simulations/nbody/nbody;'"
