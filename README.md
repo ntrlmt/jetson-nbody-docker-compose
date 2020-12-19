@@ -3,7 +3,10 @@
 
 ## Dependencies
 
-* JetPack 4.4.1 (Host)
+### Host
+
+* JetPack 4.4.1
+* docker-compose v1.24.x or later
 
 ## Usage
 
